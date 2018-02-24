@@ -8,8 +8,15 @@
 
 import UIKit
 
+
 class ViewController: UIViewController {
 
+    @IBAction func btnAction(_ sender: UIButton) {
+        
+        performSegue(withIdentifier: "gotoSegueView", sender: self)
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
