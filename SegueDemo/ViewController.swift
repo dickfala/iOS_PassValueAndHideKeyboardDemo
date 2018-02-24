@@ -11,6 +11,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var testField: UITextField!
     @IBAction func btnAction(_ sender: UIButton) {
         
         performSegue(withIdentifier: "gotoSegueView", sender: self)
@@ -27,6 +28,14 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "gotoSegueView" {
+            let destinationVC = segue.destination as! SecondViewController
+            destinationVC.message = testField.text
+        }
+        
+    }
 
 }
 

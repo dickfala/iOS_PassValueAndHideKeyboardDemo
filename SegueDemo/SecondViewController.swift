@@ -10,10 +10,13 @@ import UIKit
 
 class SecondViewController: UIViewController {
 
+    @IBOutlet weak var label: UILabel!
+    var message : String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        label.text = message
     }
 
     override func didReceiveMemoryWarning() {
