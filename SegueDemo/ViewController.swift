@@ -9,7 +9,7 @@
 import UIKit
 
 
-class ViewController: UIViewController {
+class ViewController: UIViewController ,UITextFieldDelegate{
 
     @IBOutlet weak var testField: UITextField!
     @IBAction func btnAction(_ sender: UIButton) {
@@ -37,5 +37,14 @@ class ViewController: UIViewController {
         
     }
 
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        
+        return true
+    }
 }
 
